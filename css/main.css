@@ -1,0 +1,191 @@
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    padding:0;
+
+    
+
+	 font-family:'PT sans';
+	color:#333;
+	text-align:center;
+	text-shadow:0px 1px 1px #FFF;
+
+
+/*
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-attachment:fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	background-image:url('../img/bg.jpg');
+	
+*/
+
+	
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    font-family:'PT sans';
+	color:#333;
+	text-align:center;
+	text-shadow:0px 1px 1px #FFF;
+
+	background: rgb(242,246,255); 
+	background: -moz-radial-gradient(center, ellipse cover,  rgb(242,246,255) 0%, rgb(162,184,214) 100%); 
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgb(242,246,255)), color-stop(100%,rgb(162,184,214))); 
+	background: -webkit-radial-gradient(center, ellipse cover,  rgb(242,246,255) 0%,rgb(162,184,214) 100%); 
+	background: -o-radial-gradient(center, ellipse cover,  rgb(242,246,255) 0%,rgb(162,184,214) 100%); 
+	background: -ms-radial-gradient(center, ellipse cover,  rgb(242,246,255) 0%,rgb(162,184,214) 100%); 
+	background: radial-gradient(ellipse at center,  rgb(242,246,255) 0%,rgb(162,184,214) 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6ff', endColorstr='#a2b8d6',GradientType=1 );
+	
+}
+
+h2{
+	font-size:35px;
+	font-weight:100;
+}
+
+a {
+	color:#ccc;
+}
+
+.complete{
+	opacity:0.6;
+}
+
+.complete .title{
+	color:#666!important;
+	text-decoration:line-through!important;
+}
+
+.input{
+	width:285px;
+	color:#000;
+	font-size:16px;
+	padding:8px 5px 8px 5px;
+	margin:0;
+	background-color:rgba(255,255,255, .2);
+	border-radius:5px;
+	border:1px solid #efefef;
+	outline-width: 0;
+	font-size:20px;
+	font-weight:100;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    rgba(255,255,255,0.6);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    rgba(255,255,255,0.6);
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    rgba(255,255,255,0.6);
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    rgba(255,255,255,0.6);
+}
+
+#todolistcontainer{
+	
+	width:300px;
+	margin:0 auto;
+	padding:0;
+}
+
+#todolist{
+	list-style-type: none;
+	margin:0;
+	padding:10px 0px 0px 0px;
+	
+	color:#222;
+
+}
+
+.todo-li{
+	float:left;
+	font-size:20px;
+	font-weight:100;
+	width:288px;
+	background-image:url('../img/texture.jpg');
+	border-radius:5px;
+	margin:2px 0px 2px 0px;
+	padding:4px 5px 4px 5px;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+}
+
+
+.todo-li a{
+	display:none;
+	float:right;
+	width:16px;
+	height:16px;
+	line-height:16px;
+	margin-top:5px;
+	background-image:url('../img/delete.png');
+	background-repeat:no-repeat;
+}
+
+.show{
+	display:inline!important;
+	-webkit-transition-duration: 1s;
+}
+
+/* textfield edit input single todo item*/
+.todo-li .editinput{
+	display:none;
+	float:left;
+	width:240px;
+	color:rgb(162,184,214);
+	font-size:18px;
+	line-height:18px;
+
+	padding:2px 0px 3px 5px;
+	margin:0;
+	background-color:transparent;
+	border-radius:0px;
+	border:none;
+	outline-width: 0;
+	font-weight:100;
+
+}
+
+.todo-li.editing .editinput{
+	display:inline;
+}
+
+.todo-li.editing .title{
+	display:none;
+}
+
+.check{
+	margin-top:8px;
+	float:left;
+}
+
+.title{
+	display:block;
+	float:left;
+	width:240px;
+	overflow-x:hidden;
+	text-overflow:ellipsis;
+	text-align:left;
+	padding:0px 0px 0px 5px;
+	text-shadow:0px 1px 1px #FFF;
+}
+
+.imprint{
+	display:block;
+	float:left;
+	width:100%;
+	color:#fff;
+	text-shadow:none;
+	padding-top:10px;
+	font-size:12px;
+};
