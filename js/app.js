@@ -85,11 +85,19 @@ template: _.template($('#todolistcontainer').html()),
     		return this;
 		},
 		events:{
-			'keyup #input':'pressedEnter'
+			'keyup #input':'pressedEnter',
+			'blur #input':'blurred'
 		},
 		pressedEnter:function(e){
 			var inp = $('#input');
 			if(e.keyCode == 13 && !inp.val() == ''){
+				this.addOne();
+				inp.val('');
+			}
+		},
+		blurred:function(e){
+			var inp = $('#input');
+			if(!inp.val() == ''){
 				this.addOne();
 				inp.val('');
 			}
@@ -133,6 +141,7 @@ template: _.template($('#todolistcontainer').html()),
 			'<input type="text" value="<%=title%>" class="editinput" />'),
 		render:function(){
 			this.$el.addClass(this.model.get('status')).html(this.template(this.model.toJSON()));
+			
 			//console.log('renderd item LI ' + this.model.get('title'));
 				$('#remaining').html(todolist.remaining().length);
 			return this;
@@ -143,6 +152,7 @@ template: _.template($('#todolistcontainer').html()),
 			'mouseover':'showIt',
 			'mouseout':'hideIt',
 			'dblclick .title':'editItem',
+			'touchstart .title':'editItem',
 			'keyup .editinput':'changeItem',
 			'blur .editinput':'closeEditModeAndSaveItem'
 		},
