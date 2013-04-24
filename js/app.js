@@ -21,11 +21,6 @@
 			//save Status to Server.
 
 			this.save();
-		},
-		//toggle all
-		resolveStatus:function(){
-			this.set({'status':'complete'});
-			this.save();
 		}
 	});
 
@@ -143,7 +138,9 @@ template: _.template($('#todolistcontainer').html()),
 			this.$el.addClass(this.model.get('status')).html(this.template(this.model.toJSON()));
 			
 			//console.log('renderd item LI ' + this.model.get('title'));
-				$('#remaining').html(todolist.remaining().length);
+			console.log('rendered');
+			$('#remaining').html(todolist.remaining().length);
+			$('#completed').html(todolist.completed().length);
 			return this;
 		},
 		events:{
@@ -169,6 +166,7 @@ template: _.template($('#todolistcontainer').html()),
 		},
 		delEntry:function(){
 			this.model.destroy();
+			this.render();
 		},
 		showIt:function(){
 			this.$el.find('.deletebtn').addClass('show');
@@ -182,7 +180,6 @@ template: _.template($('#todolistcontainer').html()),
 		},
 		remove:function(){
 			this.$el.remove();
-			console.log(todolist.length);
 		},
 		editItem:function(){
 			this.$el.addClass("editing");
